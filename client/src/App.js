@@ -13,9 +13,9 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Router>
         <Navbar />
         <Jumbotron />
-        <Router>
           <Container>
             <ToastContainer
               position="top-center"

@@ -19,11 +19,6 @@ if (process.env.NODE_ENV === "production") {
 //Define API routes here
 app.use(routes);
 
-// Define any API routes before this runs
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
