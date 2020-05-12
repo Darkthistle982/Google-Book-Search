@@ -7,10 +7,10 @@ class SearchBar extends Component {
       <div className="container">
         <form className="mt-2 p-2 border border-dark bg-light">
           <div className="form-group">
-            <h1>Search For Books</h1>
+            <h1>Find a Book to Explore!</h1>
             <hr />
-            <label for="searchBar" className="mr-1">
-              Search for Book by Title
+            <label htmlFor="searchBar" className="mr-1">
+              Search Books by Title
             </label>
             <input type="text" className="form-control" id="searchBar"></input>
           </div>
