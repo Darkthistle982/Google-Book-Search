@@ -22,7 +22,7 @@ mongoose.connect("mongodb://localhost/googlebooks", {
 
 //Define API routes here
 app.get("/mongoose", function (request, response) {
-  Book.find({})
+  Book.findAll({})
   .then(function (data) {
     response.json(data);
   })
