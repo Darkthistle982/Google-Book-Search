@@ -2,17 +2,42 @@ import React, { Component } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Jumbotron from "./Components/Jumbotron/Jumbotron";
 import SearchBar from "./Components/SearchBar/SearchBar";
-import './App.css';
+import ResultCardContainer from "./Components/ResultCardContainer/ResultCardContainer";
+import "./App.css";
 
 class App extends Component {
+  state = {
+    title: "Google Books",
+    booklist: [
+      {
+        title: "stuff",
+        authors: ["people", "otherpeople"],
+        description: "stuf stuf stuf",
+      },
+      {
+        title: "other stuff",
+        authors: ["people", "otherpeople"],
+        description: "stuf stuf stuf",
+      },
+      {
+        title: "more stuff",
+        authors: ["people", "otherpeople"],
+        description: "stuf stuf stuf",
+      },
+    ],
+  };
+
+
+
   render() {
     return (
       <div>
-        <Navbar />
-        <Jumbotron />
-        <section>
+        <div>
+          <Navbar titlething={"Google Books"} />
+          <Jumbotron />
           <SearchBar />
-        </section>
+          <ResultCardContainer booklist={this.state.booklist}/>
+        </div>
       </div>
     );
   }
