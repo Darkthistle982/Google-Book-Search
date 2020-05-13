@@ -12,16 +12,20 @@ class App extends Component {
         title: "stuff",
         authors: ["people", "otherpeople"],
         description: "stuf stuf stuf",
+        thumbnail: "https://i.imgur.com/N8bGxz7.png",
+        link: "www.linkypoo.corn"
       },
       {
         title: "other stuff",
         authors: ["people", "otherpeople"],
         description: "stuf stuf stuf",
+        thumbnail: "https://i.imgur.com/LVJhJrk.jpg"
       },
       {
         title: "more stuff",
         authors: ["people", "otherpeople"],
         description: "stuf stuf stuf",
+        thumbnail: "https://i.imgur.com/rpgzGgh.jpg"
       },
     ],
   };
@@ -32,7 +36,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Navbar titlething={"Google Books"} />
+          <Navbar />
           <Jumbotron />
           <SearchBar />
           <ResultCardContainer booklist={this.state.booklist}/>

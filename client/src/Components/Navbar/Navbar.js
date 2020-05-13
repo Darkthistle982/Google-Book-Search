@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Navbar(props) {
+export default function Navbar() {
   return (
     <div>
       <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
-        <span className="navbar-brand mb-0 h1">{props.titlething}</span>
+        <span className="navbar-brand mb-0 h1">Google Books</span>
         <button
           className="navbar-toggler"
           type="button"
