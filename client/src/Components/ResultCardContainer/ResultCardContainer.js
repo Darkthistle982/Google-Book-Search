@@ -2,21 +2,23 @@ import React from "react";
 import ResultCard from "../ResultCard/ResultCard";
 
 
-export default function ResultsBookList(props) {
+ function ResultsBookList(props) {
     const BookList = props.booklist;
-    
+    console.log(BookList);
   return (
     <div className="container book-container">
       {BookList.map((book, index) => (
         <ResultCard
           key={index}
-          title={book.title}
-          authors={book.authors}
-          thumbnail={book.thumbnail}
-          description={book.description}
-          link={book.link}
+          title={book.volumeInfo.title}
+          authors={book.volumeInfo.authors}
+          thumbnail={book.volumeInfo.imageLinks.thumbnail}
+          description={book.volumeInfo.description}
+          link={book.volumeInfo.infoLink}
         />
       ))}
     </div>
   );
 }
+
+export default ResultsBookList;

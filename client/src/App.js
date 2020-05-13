@@ -8,33 +8,15 @@ import "./App.css";
 class App extends Component {
   state = {
     searchTerm: "",
-    booklist: [
-      {
-        title: "stuff",
-        authors: ["people", "otherpeople"],
-        description: "stuf stuf stuf",
-        thumbnail: "https://i.imgur.com/N8bGxz7.png",
-        link: "www.linkypoo.corn",
-      },
-      {
-        title: "other stuff",
-        authors: ["people", "otherpeople"],
-        description: "stuf stuf stuf",
-        thumbnail: "https://i.imgur.com/LVJhJrk.jpg",
-      },
-      {
-        title: "more stuff",
-        authors: ["people", "otherpeople"],
-        description: "stuf stuf stuf",
-        thumbnail: "https://i.imgur.com/rpgzGgh.jpg",
-      },
-    ],
+    booklist: [],
   };
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    API.search(this.state.searchTerm).then(function (data) {
-      console.log(data.data.items[0]);
+    API.search(this.state.searchTerm)
+    .then( (result) => {
+      const searchresult = result.data.items;
+      this.setState({ booklist: searchresult });
     });
   };
 
@@ -62,12 +44,18 @@ class App extends Component {
                 <label htmlFor="searchBar" className="mr-1">
                   Search for Books
                 </label>
-                <input type="text" className="form-control" id="searchBar"
-                value={this.state.searchTerm}
-                onChange={this.handleInputChange}
-                name="searchTerm"></input>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="searchBar"
+                  value={this.state.searchTerm}
+                  onChange={this.handleInputChange}
+                  name="searchTerm"
+                ></input>
               </div>
-              <button type="submit" className="btn btn-dark">Search</button>
+              <button type="submit" className="btn btn-dark">
+                Search
+              </button>
             </form>
           </div>
           <ResultCardContainer booklist={this.state.booklist} />
