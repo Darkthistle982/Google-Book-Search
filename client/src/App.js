@@ -62,18 +62,12 @@ class App extends Component {
                 <label htmlFor="searchBar" className="mr-1">
                   Search for Books
                 </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="searchBar"
-                  value={this.state.searchTerm}
-                  onChange={this.handleInputChange}
-                  name="searchTerm"
-                ></input>
+                <input type="text" className="form-control" id="searchBar"
+                value={this.state.searchTerm}
+                onChange={this.handleInputChange}
+                name="searchTerm"></input>
               </div>
-              <button type="submit" className="btn btn-dark">
-                Search
-              </button>
+              <button type="submit" className="btn btn-dark">Search</button>
             </form>
           </div>
           <ResultCardContainer booklist={this.state.booklist} />
