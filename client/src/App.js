@@ -7,7 +7,6 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    title: "Google Books",
     booklist: [
       {
         title: "stuff",
