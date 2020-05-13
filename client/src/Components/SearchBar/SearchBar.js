@@ -10,7 +10,7 @@ class SearchBar extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     API.search(this.state.searchTerm).then(function (data) {
-      console.log(data);
+      console.log(data.data.items[0]);
     });
   };
 
@@ -18,8 +18,8 @@ class SearchBar extends Component {
     // const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      searchTerm: value
-    })
+      searchTerm: value,
+    });
   };
 
   render() {
