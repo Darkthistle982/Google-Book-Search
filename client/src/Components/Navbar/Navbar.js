@@ -18,7 +18,7 @@ export default function Navbar() {
           <ul className="navbar-nav">
             <li className="nav-item active">
               <button
-                href="#"
+                href="/"
                 className="nav-item btn btn-outline-light mb-0 mr-3"
               >
                 Search <span className="sr-only">(current)</span>
@@ -26,7 +26,7 @@ export default function Navbar() {
             </li>
             <li className="nav-item">
               <button
-                href="#"
+                href="/Saved"
                 className="nav-item btn btn-outline-light mb-0 text-white"
               >
                 Saved

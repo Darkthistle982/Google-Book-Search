@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import "./ResultCard.css";
 
 export default function ResultCard(props) {
@@ -8,14 +9,29 @@ export default function ResultCard(props) {
   const description = props.description;
   const link = props.link;
 
+  const handleSave = (book) => {
+    axios
+      .post('/api/books', book)
+      .then(function() {
+        console.log("Saved")
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
+    };
+
   return (
     <div className="card card-fluid mt-2 bg-dark text-white">
-      <h1 className="card-header">{title}</h1>
+      <h1 className="card-header">
+        {title}
+        <button type="button" className="btn btn-sm btn-light float-right" onClick={handleSave}>Save</button>
+        <button type="button" className="btn btn-sm btn-danger float-right mr-2">Delete</button>
+        </h1>
       <div className="card-body">
         <img src={thumbnail} alt="book" className="float-left mr-2"></img>
         <p className="">Authors: {authors}</p>
         <p>Synopsis: {description}</p>
-        <p>Link: {link}</p>
+        <a rel="noopener nofeferrer" href={link} target="_blank">Link: {link}</a>
         
       </div>
     </div>

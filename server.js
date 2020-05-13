@@ -21,11 +21,14 @@ mongoose.connect("mongodb://localhost/googlebooks", {
 });
 
 //Define API routes here
-app.get("/mongoose", function (request, response) {
-  Book.findAll({})
-  .then(function (data) {
-    response.json(data);
+app.post('/api/books', (request, response) => {
+  const bookData = request.body;
+  Book.create(bookData).then(function() {
+    response.status(200).end();
   })
+  .catch(function(error) {
+    response.status(418).json();
+  });
 });
 
 // Define any API routes before this runs

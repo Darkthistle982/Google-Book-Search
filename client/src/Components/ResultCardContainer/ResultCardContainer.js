@@ -6,7 +6,7 @@ import ResultCard from "../ResultCard/ResultCard";
     const BookList = props.booklist;
     console.log(BookList);
   return (
-    <div className="container book-container">
+    <div className="container-fluid">
       {BookList.map((book, index) => (
         <ResultCard
           key={index}
