@@ -17,18 +17,20 @@ if (process.env.NODE_ENV === "production") {
 
 mongoose.connect("mongodb://localhost/googlebooks", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 //Define API routes here
-app.post('/api/books', (request, response) => {
+app.post("/api/books", (request, response) => {
   const bookData = request.body;
-  Book.create(bookData).then(function() {
-    response.status(200).end();
-  })
-  .catch(function(error) {
-    response.status(418).json();
-  });
+  console.log(bookData);
+  Book.create(bookData)
+    .then(function () {
+      response.status(200).end();
+    })
+    .catch(function (error) {
+      response.status(418).json();
+    });
 });
 
 // Define any API routes before this runs

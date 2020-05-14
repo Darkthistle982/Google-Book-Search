@@ -26,11 +26,6 @@ class App extends Component {
       searchTerm: value,
     });
   };
-  //Need to setup a save click event//
-  handleBookSave = (event) => {
-    event.preventDefault();
-
-  }
 
   render() {
     return (

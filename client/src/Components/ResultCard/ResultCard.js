@@ -13,7 +13,7 @@ export default function ResultCard(props) {
     axios
       .post('/api/books', book)
       .then(function() {
-        console.log("Saved")
+        console.log("Saved");
       })
       .catch(function(error) {
         console.log(error)
