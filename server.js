@@ -23,13 +23,12 @@ mongoose.connect("mongodb://localhost/googlebooks", {
 //Define API routes here
 app.post("/api/books", (request, response) => {
   const bookData = request.body;
-  console.log(bookData);
   Book.create(bookData)
     .then(function () {
       response.status(200).end();
     })
     .catch(function (error) {
-      response.status(418).json();
+      console.log(error);
     });
 });
 
