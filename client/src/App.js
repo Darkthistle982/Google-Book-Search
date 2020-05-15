@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Jumbotron from "./Components/Jumbotron/Jumbotron";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import API from "../src/utils/API";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ResultCardContainer from "./Components/ResultCardContainer/ResultCardContainer";
 import "./App.css";
 
@@ -15,8 +15,7 @@ class App extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    API.search(this.state.searchTerm)
-    .then( (result) => {
+    API.search(this.state.searchTerm).then((result) => {
       const searchresult = result.data.items;
       this.setState({ booklist: searchresult });
     });
@@ -32,18 +31,23 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>
+        <Router>
           <Navbar />
           <Jumbotron />
-          <SearchBar 
-          searchTerm={this.state.searchTerm}
-          handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.handleFormSubmit}
-          />
-          <ResultCardContainer 
-          booklist={this.state.booklist}
-         />
-        </div>
+          <Switch>
+            <Route exact path="/">
+              <SearchBar
+                searchTerm={this.state.searchTerm}
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+              />
+              <ResultCardContainer booklist={this.state.booklist} />
+            </Route>
+            <Route path="/saved">
+              <SavedBooks/>
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
