@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a href="/" className="nav-item btn btn-outline-light mb-0 mr-3">
+              <a href="/" className="nav-item btn btn-light mb-0 mr-3">
                 <Link to="/">
                   Search <span className="sr-only">(current)</span>
                 </Link>
@@ -27,7 +27,7 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 href="/Saved"
-                className="nav-item btn btn-outline-light mb-0 text-white"
+                className="nav-item btn btn-light mb-0 text-white"
               >
                 <Link to="/saved">Saved</Link>
               </a>
