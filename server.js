@@ -21,6 +21,16 @@ mongoose.connect("mongodb://localhost/googlebooks", {
 });
 
 //Define API routes here
+app.get("/api/saved-books", (request, response) => {
+  Book.find({}).lean()
+  .then(function (data) {
+    response.status(200).json(data);
+  })
+  .catch(function() {
+    response.status(404).end("Bad things, Mikey, bad things....")
+  })
+});
+
 app.post("/api/books", (request, response) => {
   const bookData = request.body;
   Book.create(bookData)
@@ -28,7 +38,7 @@ app.post("/api/books", (request, response) => {
       response.status(200).end();
     })
     .catch(function (error) {
-      console.log(error);
+      response.status(404).send(error.message);
     });
 });
 

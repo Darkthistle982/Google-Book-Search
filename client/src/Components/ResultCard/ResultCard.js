@@ -33,7 +33,7 @@ export default function ResultCard(props) {
       <h1 className="card-header">
         {title}
         <button type="button" className="btn btn-sm btn-light float-right" onClick={() => handleSave(book)}>Save</button>
-        <button type="button" className="btn btn-sm btn-danger float-right mr-2">Delete</button>
+        {/* <button type="button" className="btn btn-sm btn-danger float-right mr-2">Delete</button> */}
         </h1>
       <div className="card-body">
         <img src={thumbnail} alt="book" className="float-left mr-2"></img>
