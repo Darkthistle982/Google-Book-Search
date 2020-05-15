@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "./Components/Navbar/Navbar";
-import Jumbotron from "./Components/Jumbotron/Jumbotron";
 import SearchBar from "./Components/SearchBar/SearchBar";
+import Jumbotron from "./Components/Jumbotron/Jumbotron";
+import SavedBooks from "./Components/pages/SavedBooks/SavedBooks";
 import API from "../src/utils/API";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ResultCardContainer from "./Components/ResultCardContainer/ResultCardContainer";
@@ -44,7 +45,7 @@ class App extends Component {
               <ResultCardContainer booklist={this.state.booklist} />
             </Route>
             <Route path="/saved">
-              <SavedBooks/>
+              <SavedBooks />
             </Route>
           </Switch>
         </Router>
