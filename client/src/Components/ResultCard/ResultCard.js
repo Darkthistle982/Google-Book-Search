@@ -32,14 +32,14 @@ export default function ResultCard(props) {
     <div className="card card-fluid mt-2 bg-dark text-white">
       <h1 className="card-header">
         {title}
-        <button type="button" className="btn btn-sm btn-light float-right" onClick={handleSave(book)}>Save</button>
+        <button type="button" className="btn btn-sm btn-light float-right" onClick={() => handleSave(book)}>Save</button>
         <button type="button" className="btn btn-sm btn-danger float-right mr-2">Delete</button>
         </h1>
       <div className="card-body">
         <img src={thumbnail} alt="book" className="float-left mr-2"></img>
         <p className="">Authors: {authors}</p>
         <p>Synopsis: {description}</p>
-        <a rel="noopener nofeferrer" href={link} target="_blank">Link: {link}</a>
+        <a rel="noopener noreferrer" href={link} target="_blank">Link: {link}</a>
         
       </div>
     </div>

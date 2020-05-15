@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Jumbotron from "./Components/Jumbotron/Jumbotron";
+import SearchBar from "./Components/SearchBar/SearchBar";
 import API from "../src/utils/API";
+
 import ResultCardContainer from "./Components/ResultCardContainer/ResultCardContainer";
 import "./App.css";
 
@@ -33,32 +35,14 @@ class App extends Component {
         <div>
           <Navbar />
           <Jumbotron />
-          <div className="container">
-            <form
-              className="mt-2 p-2 border border-dark bg-light"
-              onSubmit={this.handleFormSubmit}
-            >
-              <div className="form-group">
-                <h1>Find a Book to Explore!</h1>
-                <hr />
-                <label htmlFor="searchBar" className="mr-1">
-                  Search for Books
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="searchBar"
-                  value={this.state.searchTerm}
-                  onChange={this.handleInputChange}
-                  name="searchTerm"
-                ></input>
-              </div>
-              <button type="submit" className="btn btn-dark">
-                Search
-              </button>
-            </form>
-          </div>
-          <ResultCardContainer booklist={this.state.booklist} />
+          <SearchBar 
+          searchTerm={this.state.searchTerm}
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+          />
+          <ResultCardContainer 
+          booklist={this.state.booklist}
+         />
         </div>
       </div>
     );
