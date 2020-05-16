@@ -8,32 +8,27 @@ export default function SavedCard(props) {
   const thumbnail = props.thumbnail;
   const description = props.description;
   const link = props.link;
-  
-  const book = {
-    title: props.title,
-    authors: props.authors,
-    thumbnail: props.thumbnail,
-    description: props.description,
-    link: props.link
-  }
+  const getBooks = props.getBooks;  
+  const book_id = props._id;
 
-  const handleSave = (book) => {
+  const handleDelete = (book_id) => {
+    const deletePath = `/api/books/${book_id}`;
     axios
-      .post('/api/books', book)
-      .then(function() {
-        console.log("Saved");
+      .delete(deletePath)
+      .then((result) => {
+        console.log("Deleted");
+        getBooks();
       })
-      .catch(function(error) {
-        console.log(error)
-      })
-    };
+      .catch(error => {
+        console.log(error.message);
+      });
+  }
 
   return (
     <div className="card card-fluid mt-2 bg-dark text-white">
       <h1 className="card-header">
         {title}
-        <button type="button" className="btn btn-sm btn-light float-right" onClick={() => handleSave(book)}>Save</button>
-        <button type="button" className="btn btn-sm btn-danger float-right mr-2">Delete</button>
+        <button type="button" className="btn btn-sm btn-danger float-right mr-2" onClick={() => handleDelete(book_id)}>Delete</button>
         </h1>
       <div className="card-body">
         <img src={thumbnail} alt="book" className="float-left mr-2"></img>

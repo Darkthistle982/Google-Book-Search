@@ -4,6 +4,7 @@ import SavedCard from "../SavedCard/SavedCard";
 
  function ResultsBookList(props) {
     const BookList = props.booklist;
+    const getBooks = props.getSavedBooks;
   return (
     <div className="container-fluid">
       {BookList.map((book, index) => (
@@ -13,7 +14,9 @@ import SavedCard from "../SavedCard/SavedCard";
           authors={book.authors}
           description={book.description}
           thumbnail={book.thumbnail}
-          link={book.infoLink}
+          link={book.link}
+          _id={book._id}
+          getBooks={getBooks} 
         />
       ))}
     </div>

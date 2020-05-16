@@ -31,6 +31,20 @@ app.get("/api/saved-books", (request, response) => {
   })
 });
 
+app.delete("/api/books/:id", (request, response) => {
+  const mongoID = request.params.id;
+  Book
+    .remove({
+      _id: mongoID
+    })
+    .then((data) => {
+      response.status(200).end();
+    })
+    .catch(error => {
+      response.status(404).send(error.message);
+    })
+})
+
 app.post("/api/books", (request, response) => {
   const bookData = request.body;
   Book.create(bookData)
