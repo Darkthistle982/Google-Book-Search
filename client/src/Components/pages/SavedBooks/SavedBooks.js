@@ -1,35 +1,36 @@
 import React, { Component } from "react";
 import axios from "axios";
-import ResultCard from "../../ResultCard/ResultCard"
-
+import SearchCardContainer from "../../SavedCardContainer/SavedCardContainer";
 
 class SavedBooks extends Component {
-state = {
-    savedBooks: []
-}
+  state = {
+    savedBooks: [],
+  };
 
-componentDidMount() {
+  componentDidMount() {
     this.getSavedBooksFromDB();
-}
+  }
 
-getSavedBooksFromDB = () => {
+  getSavedBooksFromDB = () => {
     axios
       .get("/api/saved-books")
-      .then(function (request, response) {
-        response.json();
+      .then((results) => {
+        const savedResults = results.data;
+        this.setState({ savedBooks: savedResults });
+        console.log(this.state.savedBooks);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
       });
   };
 
   render() {
-      return (
-      <div className="container">
-          <ResultCard/>
+    return (
+      <div className="container-fluid">
+        <SearchCardContainer booklist={this.state.savedBooks} />
       </div>
-      )
-      }
+    );
+  }
 }
 
 export default SavedBooks;
