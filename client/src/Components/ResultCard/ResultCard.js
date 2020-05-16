@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./ResultCard.css";
+import { useAlert } from "react-alert";
 
 export default function ResultCard(props) {
   const title = props.title;
@@ -8,6 +9,7 @@ export default function ResultCard(props) {
   const thumbnail = props.thumbnail;
   const description = props.description;
   const link = props.link;
+  const alert = useAlert();
 
   const book = {
     title: props.title,
@@ -21,7 +23,7 @@ export default function ResultCard(props) {
     axios
       .post("/api/books", book)
       .then(() => {
-        console.log("Saved");
+        alert.show(`${book.title} was saved to the Library.`);
       })
       .catch((error) => {
         console.log(error);
