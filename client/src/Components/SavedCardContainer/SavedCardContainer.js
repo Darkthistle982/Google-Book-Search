@@ -1,10 +1,9 @@
 import React from "react";
 import SavedCard from "../SavedCard/SavedCard";
 
-
- function ResultsBookList(props) {
-    const BookList = props.booklist;
-    const getBooks = props.getSavedBooks;
+function ResultsBookList(props) {
+  const BookList = props.booklist;
+  const getBooks = props.getSavedBooks;
   return (
     <div className="container-fluid">
       {BookList.map((book, index) => (
@@ -16,7 +15,7 @@ import SavedCard from "../SavedCard/SavedCard";
           thumbnail={book.thumbnail}
           link={book.link}
           _id={book._id}
-          getBooks={getBooks} 
+          getBooks={getBooks}
         />
       ))}
     </div>

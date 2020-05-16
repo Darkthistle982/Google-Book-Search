@@ -22,28 +22,27 @@ mongoose.connect("mongodb://localhost/googlebooks", {
 
 //Define API routes here
 app.get("/api/saved-books", (request, response) => {
-  Book.find({}).lean()
-  .then(function (data) {
-    response.status(200).json(data);
-  })
-  .catch(function() {
-    response.status(404).end("Bad things, Mikey, bad things....")
-  })
+  Book.find({})
+    .then(function (data) {
+      response.status(200).json(data);
+    })
+    .catch(function () {
+      response.status(404).end("Bad things, Mikey, bad things....");
+    });
 });
 
 app.delete("/api/books/:id", (request, response) => {
   const mongoID = request.params.id;
-  Book
-    .remove({
-      _id: mongoID
-    })
+  Book.remove({
+    _id: mongoID,
+  })
     .then((data) => {
       response.status(200).end();
     })
-    .catch(error => {
+    .catch((error) => {
       response.status(404).send(error.message);
-    })
-})
+    });
+});
 
 app.post("/api/books", (request, response) => {
   const bookData = request.body;

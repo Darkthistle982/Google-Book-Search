@@ -1,5 +1,5 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 import "./SavedCard.css";
 
 export default function SavedCard(props) {
@@ -8,7 +8,7 @@ export default function SavedCard(props) {
   const thumbnail = props.thumbnail;
   const description = props.description;
   const link = props.link;
-  const getBooks = props.getBooks;  
+  const getBooks = props.getBooks;
   const book_id = props._id;
 
   const handleDelete = (book_id) => {
@@ -16,26 +16,32 @@ export default function SavedCard(props) {
     axios
       .delete(deletePath)
       .then((result) => {
-        console.log("Deleted");
         getBooks();
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error.message);
       });
-  }
+  };
 
   return (
     <div className="card card-fluid mt-2 bg-dark text-white">
       <h1 className="card-header">
         {title}
-        <button type="button" className="btn btn-sm btn-danger float-right mr-2" onClick={() => handleDelete(book_id)}>Delete</button>
-        </h1>
+        <button
+          type="button"
+          className="btn btn-sm btn-danger float-right mr-2"
+          onClick={() => handleDelete(book_id)}
+        >
+          Delete
+        </button>
+      </h1>
       <div className="card-body">
         <img src={thumbnail} alt="book" className="float-left mr-2"></img>
         <p className="">Authors: {authors}</p>
         <p>Synopsis: {description}</p>
-        <a rel="noopener noreferrer" href={link} target="_blank">Link: {link}</a>
-        
+        <a rel="noopener noreferrer" href={link} target="_blank">
+          Link: {link}
+        </a>
       </div>
     </div>
   );

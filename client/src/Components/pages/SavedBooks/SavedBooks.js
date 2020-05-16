@@ -26,9 +26,9 @@ class SavedBooks extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <SearchCardContainer 
-        booklist={this.state.savedBooks}
-        getSavedBooks={this.getSavedBooksFromDB}
+        <SearchCardContainer
+          booklist={this.state.savedBooks}
+          getSavedBooks={this.getSavedBooksFromDB}
         />
       </div>
     );

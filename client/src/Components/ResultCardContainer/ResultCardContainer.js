@@ -1,9 +1,8 @@
 import React from "react";
 import ResultCard from "../ResultCard/ResultCard";
 
-
- function ResultsBookList(props) {
-    const BookList = props.booklist;
+function ResultsBookList(props) {
+  const BookList = props.booklist;
   return (
     <div className="container-fluid">
       {BookList.map((book, index) => (
