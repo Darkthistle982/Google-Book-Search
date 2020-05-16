@@ -1,7 +1,8 @@
 import axios from "axios";
+import GBooksAPIKey from "./googleBooksAPI";
 //how do I get dotenv to work? this exposes my apikey, but it won't read from .env for some reason
 const BASEURL = "https://www.googleapis.com/books/v1/volumes?q=";
-const APIKEY = "&key=AIzaSyCW_0mBXLYZGip40GE6MillQdGuK4uddig";
+const APIKEY = GBooksAPIKey;
 
 export default {
   search: function (query) {

@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import Navbar from "./Components/Navbar/Navbar";
-import SearchBar from "./Components/SearchBar/SearchBar";
 import Jumbotron from "./Components/Jumbotron/Jumbotron";
 import SavedBooks from "./Components/pages/SavedBooks/SavedBooks";
 import SearchBooks from "./Components/pages/SearchBooks/SearchBooks";
 import API from "../src/utils/API";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ResultCardContainer from "./Components/ResultCardContainer/ResultCardContainer";
 import "./App.css";
 
 class App extends Component {
@@ -19,7 +17,7 @@ class App extends Component {
     event.preventDefault();
     API.search(this.state.searchTerm).then((result) => {
       const searchresult = result.data.items;
-      this.setState({ booklist: searchresult });
+      this.setState({ booklist: searchresult, searchTerm: "" });
     });
   };
 
