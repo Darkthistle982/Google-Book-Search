@@ -17,7 +17,6 @@ class SavedBooks extends Component {
       .then((results) => {
         const savedResults = results.data;
         this.setState({ savedBooks: savedResults });
-        console.log(this.state.savedBooks);
       })
       .catch((error) => {
         console.log(error);

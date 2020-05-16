@@ -20,10 +20,10 @@ export default function ResultCard(props) {
   const handleSave = (book) => {
     axios
       .post('/api/books', book)
-      .then(function() {
+      .then(() => {
         console.log("Saved");
       })
-      .catch(function(error) {
+      .catch((error) => {
         console.log(error)
       })
     };
