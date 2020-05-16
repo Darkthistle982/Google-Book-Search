@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import SearchBar from "./Components/SearchBar/SearchBar";
 import Jumbotron from "./Components/Jumbotron/Jumbotron";
 import SavedBooks from "./Components/pages/SavedBooks/SavedBooks";
+import SearchBooks from "./Components/pages/SearchBooks/SearchBooks";
 import API from "../src/utils/API";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ResultCardContainer from "./Components/ResultCardContainer/ResultCardContainer";
@@ -37,12 +38,12 @@ class App extends Component {
           <Jumbotron />
           <Switch>
             <Route exact path="/">
-              <SearchBar
-                searchTerm={this.state.searchTerm}
-                handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
+              <SearchBooks 
+              searchTerm={this.state.searchTerm}
+              handleInputChange={this.handleInputChange}
+              handleFormSubmit={this.handleFormSubmit}
+              booklist={this.state.booklist}
               />
-              <ResultCardContainer booklist={this.state.booklist} />
             </Route>
             <Route path="/saved">
               <SavedBooks />
