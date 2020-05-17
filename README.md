@@ -36,4 +36,4 @@ The application had several interations over the course of creating it. I ended 
 
 I had help from numerous folks from class including, Jacob Stanger, Miranda D'Asto, Graham Thomas, as well as the staff, Chris Stead, Kurt Lehnardt, and Mike Rivera. Without their troubleshooting, and help, I would not have gotten through piecing this together. It took many more hours of careful, tiny steps and digging into errors than any other project thus far, and I appreciate having good people to help me along the way. 
 
-### Link to the Live Project on Heroku: 
+### Link to the Live Project on Heroku: https://googly-book-search.herokuapp.com/
