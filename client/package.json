@@ -10,7 +10,9 @@
     "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "dot-prop": ">=4.2.1",
+    "yargs-parser": ">=13.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
