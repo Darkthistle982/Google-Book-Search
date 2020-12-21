@@ -55,3 +55,8 @@ Saved Books Page:
 ![Saved Books Page](/client/src/Screenshots/savedBooksPage.jpg)
 
 ### Link to the Live Project on Heroku: https://googly-book-search.herokuapp.com/
+
+
+### Update Notes
+
+Currently, the Database is offline. The MongoDB addon has been pulled from heroku. The current offered addons are not free, and as this is not a live product, I'm looking at other options. Likely will migrate to the MongoAtlas cloud DB, but will need to look into how to do that. 
