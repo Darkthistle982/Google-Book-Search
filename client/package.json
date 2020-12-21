@@ -12,7 +12,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1",
     "dot-prop": ">=4.2.1",
-    "yargs-parser": ">=13.1.2"
+    "yargs-parser": ">=13.1.2",
+    "mquery":">=3.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
